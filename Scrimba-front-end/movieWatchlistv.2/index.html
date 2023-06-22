@@ -12,22 +12,24 @@
     <title>Movie Watchlist</title>
 </head>
 <body class="container">
-    <header>
+    <header class="container">
         <div class="inner-container">
             <h1>Find your film</h1>
             <h4><a>My Watchlist</a></h4>
         </div>
         
-        <form>
+        <form class="inner-container">
             <label for="search-bar" id="search-icon" class="search-bar"><i class="fa-solid fa-magnifying-glass"></i></label>
-            <input id="search-bar" class="search-bar" type="text" placeholder="Search for a movie"/>    
+            <input id="search-bar" class="search-bar" type="text" placeholder="Search for a movie or series"/>    
             <input id="search-button" type="submit" value="Search">
         </form>
     </header>
     
     <main>
-        <h1><i class="fa-solid fa-film"></i></h1>
-        <h4>Start exploring</h4>
+            <div class="start-app">
+                <h1><i class="fa-solid fa-film"></i></h1>
+            <h4>Start exploring</h4>
+            </div>
     </main>
     
     <script type="module" src="./index.js"></script>

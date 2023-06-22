@@ -12,28 +12,33 @@ body {
     color: white;
     background-color: #1C1C1C;
     font-family: 'Inter', sans-serif;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    overflow-x: hidden;
+    overflow-y: auto;
 }
 
 /* ---- TYPO ---- */
 
 h1, h4 {
     margin: 0;
+    line-height: 1rem;
 }
 
 h1 {
-    font-size: 2.6em;
+    font-size: 2rem;
     font-weight: 800;
 }
 
 h4 {
-    font-size: 1.14em;
+    font-size: 1.4rem;
     font-weight: 700;
 }
 
 input {
-    font-size: 0.875rem;
-    font-weight: 500;
-    padding: .5625em;
+    font-size: 1rem;
+    padding: .5em;
 }   
 
 /* ---- STYLING ---- */
@@ -43,18 +48,23 @@ input {
     margin: 0 auto;
 }
 
-.inner-container, form {
-    width: 84%;
+.inner-container {
+    width: 85% ;
+}
+
+main {
+    width: 100%;
 }
 
 header {        
     background-color: #860202;
     opacity: 1;
     background-image: radial-gradient(#121212 2px, #860202 2px);
-    background-size: 2em 2em;
-    position: relative;
-    height: 15vh;
-
+    background-size: 1em 1em;
+    position: fixed;
+    height: fit-content;
+    width: 100%;
+    padding: 2rem 0;
 }
 
 div.inner-container {
@@ -66,6 +76,7 @@ div.inner-container {
 }
 
 form {
+    height: 2rem;
     position: absolute;
     bottom: -1em;
     left: 50%;
@@ -82,9 +93,11 @@ form {
 
 #search-icon {
     width: 1.5em;
-    align-self: center;
     padding-left: .5em;
     height: 100%;
+    margin: 0;
+    display: flex;
+    align-items: center;
     
 }
 
@@ -92,16 +105,12 @@ form {
     width: 100%;
     border: none;
     background-color: #2E2E2F;
-    
 }
 
 #search-bar:focus, input:focus {
     outline: none
 }
 
-form:focus {
-    border: #860202 solid 1px
-}
 
 #search-button {
     width: 25%;
@@ -119,45 +128,59 @@ form:focus {
 
 
 main {
+    height: 100%;
+    background-color: #121212;
     display: flex;
     flex-direction: column;
     justify-content:center;
     align-items: center;
-    height: 85vh;
+    margin-top: 5rem;
+}
+
+.start-app {
+    height: calc(100vh - 5rem);
     color: #A5A5A5;
-    background-color: #121212;
+    display: flex;
+    flex-direction: column;
+    justify-content:center;
+    align-items: center;
+}
+
+.content {
+    display: flex;
+}
+
+.content:first-child {
+    margin-top: 2.5rem;
+}
+
+.content img {
+    height: 6rem;
 }
 
 @media (max-width: 1366px) {
     .container {
-        width: 98vw;
+        width: 100vw;
     }
-    h1 {
-        font-size: 1.7em;
-        font-weight: 800;
-    }
-    
-    h4 {
-        font-size: 1em;
-        font-weight: 700;
-    }   
 }
 
-@media (max-width: 420px) {
+
+
+@media (max-width: 480px) {
     h1 {
-        font-size: 1.4em;
+        font-size: 1.6rem;
         font-weight: 800;
     }
     
     h4 {
-        font-size: 0.9em;
+        font-size: 0.9rem;
         font-weight: 700;
     } 
 }
 
-@media (max-width: 355px) {
+@media (max-width: 360px) {
     h1 {
-        font-size: 1.2em;
+        font-size: 1.1em;
         font-weight: 800;
     }
     
@@ -165,11 +188,16 @@ main {
         font-size: 0.8em;
         font-weight: 700;
     } 
+    
+    input::placeholder {
+        font-size: 0.8em;
+    }
+    
 }
 
 @media (max-height: 580px) {
     header {
         height: fit-content;
-        padding: 1.8em 0;
     }
+
 }

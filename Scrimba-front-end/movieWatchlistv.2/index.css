@@ -21,7 +21,7 @@ body {
 
 /* ---- TYPO ---- */
 
-h1, h4 {
+h1, h4, h3, p {
     margin: 0;
     line-height: 1rem;
 }
@@ -42,6 +42,19 @@ input {
 }   
 
 /* ---- STYLING ---- */
+
+a {
+    text-decoration: none;
+}
+
+a, a:visited, a:hover, a:active {
+    color: inherit;
+    cursor: pointer;
+  }
+  /*Fixes the event.target retruning the icon inside of the button*/
+  button > * {
+    pointer-events: none;
+  }
 
 .container {
     width: 1367px;   
@@ -146,16 +159,78 @@ main {
     align-items: center;
 }
 
-.content {
+.start-app a {
     display: flex;
+    flex-direction: column;
+    align-items:center;
+}
+
+.start-app h1 {
+    margin-bottom: 1rem;
+}
+
+.content, .content-title, .content-info {
+    display: flex;
+
+}
+
+.content {
+    padding: 1.6rem 0;
+    border-bottom: 0.5px solid #2c2c2c;
 }
 
 .content:first-child {
-    margin-top: 2.5rem;
+    margin-top: 1rem;
+}
+
+.content:last-child {
+    border-bottom: none;
 }
 
 .content img {
-    height: 6rem;
+    height: 9.2rem;
+    margin-left: 0;
+    margin-right: 1.6rem;
+}
+
+.content-text {
+    margin-left: 0;
+    align-items: baseline;
+}
+
+.content-info p {
+    margin-right: 1rem;
+    margin-top: 0.65rem;
+    min-width: 3rem;
+}
+
+.content-info button {
+    border: none;
+    background-color: #121212;
+    color: #ffffff;
+    cursor: pointer;
+    margin: 0;
+    padding: 0;
+    align-self: end;
+}
+
+.content p, .content-info button {
+    font-size: 0.75rem;
+}
+.remove-btn {
+    display: none;
+}
+
+.star-icon {
+    color: #FEC654;
+    margin-right: 0.1rem;
+    margin-left: 0.5rem;
+}
+
+.content-plot {
+    color: #A5A5A5;
+    font-size: 0.875rem;
+    margin-top: 0.5rem;
 }
 
 @media (max-width: 1366px) {
@@ -164,6 +239,15 @@ main {
     }
 }
 
+@media (max-width: 550px) {
+    .content {
+        flex-direction: column;
+    }
+    
+    .content img {
+        margin-bottom: 1.6rem;
+    }
+}
 
 
 @media (max-width: 480px) {

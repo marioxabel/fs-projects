@@ -217,9 +217,9 @@ main {
 .content p, .content-info button {
     font-size: 0.75rem;
 }
-.remove-btn {
+/* .remove-btn {
     display: none;
-}
+} */
 
 .star-icon {
     color: #FEC654;

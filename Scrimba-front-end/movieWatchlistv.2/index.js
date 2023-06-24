@@ -106,3 +106,7 @@ document.addEventListener("click", (e) => {
 
 
 
+// Start exploring "click" to focus on searchbar
+document.getElementById("start-app").addEventListener("click",() => {
+    document.getElementById("search-bar").focus()
+})

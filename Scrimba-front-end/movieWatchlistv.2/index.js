@@ -17,7 +17,7 @@ document.querySelector("form").addEventListener("submit", e => {
 
 // Get imdb ID's
 async function getImdbId(title) {
-    const response = await fetch(`http://www.omdbapi.com/?apikey=575185a6&s=${title}`)
+    const response = await fetch(`https://www.omdbapi.com/?apikey=575185a6&s=${title}`)
     const data = await response.json()
     const mediaImdbID = data.Search.map(result => result.imdbID)
     getContentInfo(mediaImdbID)
@@ -27,7 +27,7 @@ async function getImdbId(title) {
 async function getContentInfo(IDs) {
     const contentInfo = await Promise.all(
         IDs.map(async id => {
-            const response = await fetch(`http://www.omdbapi.com/?apikey=575185a6&i=${id}`)
+            const response = await fetch(`https://www.omdbapi.com/?apikey=575185a6&i=${id}`)
             const data = await response.json()
             return data
         })

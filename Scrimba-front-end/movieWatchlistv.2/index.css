@@ -51,7 +51,7 @@ a, a:visited, a:hover, a:active {
     color: inherit;
     cursor: pointer;
   }
-  /*Fixes the event.target retruning the icon inside of the button*/
+  /*Fixes the event.target returning the icon inside of the button*/
   button > * {
     pointer-events: none;
   }
@@ -65,7 +65,7 @@ a, a:visited, a:hover, a:active {
     width: 85% ;
 }
 
-main {
+main, header {
     width: 100%;
 }
 
@@ -76,7 +76,6 @@ header {
     background-size: 1em 1em;
     position: fixed;
     height: fit-content;
-    width: 100%;
     padding: 2rem 0;
 }
 
@@ -111,7 +110,6 @@ form {
     margin: 0;
     display: flex;
     align-items: center;
-    
 }
 
 #search-bar, #search-bar::selection {
@@ -133,12 +131,9 @@ form {
     color: #FFFFFF;
 }
 
-
-
 #search-button:hover {
     cursor: pointer;
 }
-
 
 main {
     height: 100%;
@@ -169,9 +164,12 @@ main {
     margin-bottom: 1rem;
 }
 
+.start-app:hover {
+    cursor: pointer;
+}
+
 .content, .content-title, .content-info {
     display: flex;
-
 }
 
 .content {
@@ -217,9 +215,6 @@ main {
 .content p, .content-info button {
     font-size: 0.75rem;
 }
-/* .remove-btn {
-    display: none;
-} */
 
 .star-icon {
     color: #FEC654;
@@ -232,6 +227,8 @@ main {
     font-size: 0.875rem;
     margin-top: 0.5rem;
 }
+
+/* ---- Media Queries ---- */
 
 @media (max-width: 1366px) {
     .container {
@@ -248,7 +245,6 @@ main {
         margin-bottom: 1.6rem;
     }
 }
-
 
 @media (max-width: 480px) {
     h1 {

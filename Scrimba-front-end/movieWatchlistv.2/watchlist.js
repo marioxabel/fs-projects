@@ -6,15 +6,15 @@ renderWatchlist(watchlist, main)
 
 function renderWatchlist(contentInfo, tagToRender) { 
     watchlist = JSON.parse(localStorage.getItem("watchlist"))
-    if (!watchlist.length) {
-       return main.innerHTML = `
-        <div class="start-app">
-            <a href="./index.html">
-                <h1><i class="fa-solid fa-circle-plus"></i> </h1>
-                <h4>Add Items to your Watchlist</h4>
-            </a>
-        </div>`
-    } 
+    // if (!watchlist.length) {
+    //    return main.innerHTML = `
+        // <div class="start-app">
+            // <a href="./index.html">
+                // <h1><i class="fa-solid fa-circle-plus"></i> </h1>
+                // <h4>Add Items to your Watchlist</h4>
+            // </a>
+        // </div>`
+    // } 
     tagToRender.innerHTML = contentInfo.map(content => {
         const {Title, Poster, imdbRating, Runtime, Genre, imdbID, Plot} = content
         return `

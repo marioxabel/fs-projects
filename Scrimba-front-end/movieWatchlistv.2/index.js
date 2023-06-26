@@ -1,11 +1,7 @@
 let pageContent
-let watchlist = JSON.parse(localStorage.getItem("watchlist")) 
+let watchlist = JSON.parse(localStorage.getItem("watchlist")) || localStorage.setItem("watchlist", JSON.stringify([]))
 const main = document.querySelector("main")
 
-if (!watchlist) {
-    watchlist = []
-    localStorage.setItem("watchlist", JSON.stringify(watchlist))
-}
 
 // Search form
 document.querySelector("form").addEventListener("submit", e => {

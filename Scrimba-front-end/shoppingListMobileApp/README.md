@@ -1,21 +1,35 @@
-# co9c344b6955623f3c23976ed
+# Shopping List Progressive Web APP
 
-Quick start:
+## Description
 
-```
-$ npm install
-$ npm start
-````
+The goal of this project was to build shopping list that was a site and a progressive web app using firebase. You can add items to the list, and delete them by just clicking or tapping the items.
 
-Head over to https://vitejs.dev/ to learn more about using vite
-## About Scrimba
+## Links
+- Live site URL: [Shopping List PWA](https://marioxabel.github.io/fs-projects/Scrimba-front-end/shoppingListMobileApp)
 
-At Scrimba our goal is to create the best possible coding school at the cost of a gym membership! 💜
-If we succeed with this, it will give anyone who wants to become a software developer a realistic shot at succeeding, regardless of where they live and the size of their wallets 🎉
-The Frontend Developer Career Path aims to teach you everything you need to become a Junior Developer, or you could take a deep-dive with one of our advanced courses 🚀
+## Technologies
 
-- [Our courses](https://scrimba.com/allcourses)
-- [The Frontend Career Path](https://scrimba.com/learn/frontend)
-- [Become a Scrimba Pro member](https://scrimba.com/pricing)
+- HTML
+- CSS
+- javaScript
+- Firebase
+- Git
 
-Happy Coding!
+## Author
+
+Mario Abel Garcia. Financial Engineer.
+
+## License
+
+**GNU General Public License v3.0** 
+
+*Permissions of this strong copyleft license are conditioned on making available 
+complete source code of licensed works and modifications, which include larger 
+works using a licensed work, under the same license. Copyright and license notices 
+must be preserved. Contributors provide an express grant of patent rights.*
+
+
+### Sources 
+
+- https://www.scrimba.com/
+

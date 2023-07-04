@@ -4,10 +4,29 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./index.css">
     <title>We are the champions</title>
 </head>
 <body>
-    
+    <header class="container">
+        <img src="./assets/freddie.png" alt="logo">
+        <h1>We Are The Champions</h1>
+    </header>
+    <form class="container">
+        <textarea id="endorsement-text" placeholder="Write your endorsement here"></textarea>
+        <div>
+            <input id="endorsement-from" type="text" placeholder="From">
+            <input id="endorsement-to" type="text" placeholder="To">
+        </div>
+        <input class="submit-button" type="submit" value="Publish">
+    </form>
+    <section class="endorsement container">
+        <h2 class="endorsements">- Endorsement -</h2>
+        <div id="endorsement-space"></div>
+    </section>
     <script src="./index.js" type="module"></script>
 </body>
 </html>

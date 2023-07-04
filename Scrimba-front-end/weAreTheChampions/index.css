@@ -1,0 +1,111 @@
+* {  
+    margin: 0 auto;
+    box-sizing: border-box;
+    font-family: inter;
+}
+
+body {
+    background-color: #1B1924;
+}
+
+
+/**** TYPO ****/
+h1, h2 {
+    color: white;
+    font-family: 'Josefin Sans', sans-serif;
+}
+
+h1 {
+    font-size: 1.5625rem;
+}
+
+input {
+    font-family: 'Josefin Sans';
+    font-size: 1.375rem;
+}
+
+.endorsement {
+    font-size: 1.375rem;
+}
+
+.bold {
+    font-weight: 700;
+}
+
+/**** STYLING ****/
+.container {
+    max-width: 390px;
+    padding: 0 35px;
+}
+
+header {
+    text-align: center;
+}
+
+header h1 {
+    margin: 17px 0;  
+}
+
+header img {
+    max-width: 100%;
+    height: 90px;
+    margin-top: 50px;
+}
+
+form div {
+    display: flex;
+    justify-content: space-between;
+
+}
+
+textarea, input {
+    border: none;
+    border-radius: 6px;
+    width: 100%;
+    padding: 1rem;
+    background-color: #444059;   
+    color: #8F8F8F;
+}
+
+textarea {
+    height: 120px;
+}
+
+input {
+    width: 48%;
+    margin: 12px 0;
+    font-size: 1rem;
+    padding: 0.5rem;
+    text-align: center;
+}
+
+.submit-button {
+    background-color: #28A9F1;
+    color: black;
+    width: 100%;
+    margin: 0;
+}
+
+.endorsements {
+    text-align: center;
+    margin: 1rem auto;
+}
+
+#endorsement-space {
+    color: white;
+}
+
+.endorsement-div {
+    background-color: #fff;
+    padding: 0.8rem;
+    font-size: 0.875rem;
+    text-align: start;
+    margin-top: 13px;
+}
+
+.endorsement-div p {
+    margin: 0.5em 00;
+    color: black;
+}
+
+

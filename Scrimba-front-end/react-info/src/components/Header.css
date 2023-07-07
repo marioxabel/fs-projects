@@ -1,0 +1,23 @@
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 90px;
+  background: #21222A;
+}
+
+div.logo {
+  display: flex;
+  justify-content:left;
+}
+
+.logo img {
+  width: 28px;
+}
+
+h2 {
+  color: #00d8ff;
+  font-size: 1.375rem;
+  font-weight: 700;
+  margin-left: 0.33rem;
+}

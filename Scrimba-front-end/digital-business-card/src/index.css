@@ -1,0 +1,52 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    color: white;
+    background-color: #23252C;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    text-align: center;
+}
+
+h2 {
+    font-size: 1rem;
+    margin-bottom: 5px;
+}
+
+p {
+    font-size: 0.64rem;
+}
+
+.container {
+    width: 320px;
+    background: #1A1B21;
+}
+
+.inner-container {
+    padding: 0 35px;
+}
+
+main {
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.about-interests {
+    text-align: left;
+    padding-top: 20px;
+    line-height: 1.5;
+}
+
+.about {
+    padding-top: 33px;
+}
+
+.interests {
+    padding-bottom: 33px;
+}

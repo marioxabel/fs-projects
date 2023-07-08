@@ -1,0 +1,15 @@
+div.icons {
+    display: flex;
+    background-color: #161619;
+    height: 64px;
+    align-items: center;
+    justify-content: space-around;
+    padding: 0 60px;
+}
+
+.icons > a {
+    color: #918E9B;
+    font-size: 25px;
+    padding: 0;
+    margin: 0 10px;
+}

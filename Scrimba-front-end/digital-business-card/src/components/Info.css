@@ -1,0 +1,43 @@
+div.container img {
+    max-width: 100%;
+}
+
+.frontend-text {
+    color: #ee7a35;
+    font-size: 0.8rem;
+}
+
+h1 {
+    margin: 0.3em 0 0.1em;
+}
+
+a.small {
+    margin: 0.8em auto;
+    font-size: 0.64rem;
+    color: white;
+    text-align: center;
+}
+
+.links {
+    display: flex;
+    justify-content: space-between;
+}
+
+a, a::after, a:visited{
+    display: block;
+    text-decoration: none;
+    width: 115px;
+    padding: 0.4em;
+    font-size: 0.875rem;
+    border-radius: 6px;
+}
+
+.email {
+    color: black;
+    background-color: #D1D5DB;
+}
+
+a.linkedin,  a.linkedin::after {
+    background-color: #5093E2;
+    color: white;
+}

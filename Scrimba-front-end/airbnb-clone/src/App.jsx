@@ -1,0 +1,25 @@
+import Navbar from "./components/Navbar"
+import Hero from "./components/Hero"
+import Card from "./components/Card.jsx"
+import data from "./data.js"
+
+function App() {
+  const cardElements = data.map(item => {
+    return <Card 
+              key={item.id}
+              {...item}
+            />
+  })
+  
+  return (
+    <>
+      <Navbar />
+      <Hero />
+      <div className="cards container">
+        {cardElements}  
+      </div>
+    </>
+  )
+}
+
+export default App

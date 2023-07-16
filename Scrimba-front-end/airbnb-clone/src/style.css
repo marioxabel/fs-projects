@@ -1,0 +1,42 @@
+*, *::before, *::after { 
+    box-sizing: border-box;    
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	/* font: inherit; */
+}
+
+body {
+    font-family: Poppins, 'sans-serif'; 
+}
+
+img, picture, svg, video {
+    max-width: 100%;  
+    display: block; 
+}
+
+/* -- TYPO -- */
+h1 {
+    font-weight: 600;
+    font-size: 2.25rem;
+}
+
+
+
+/* -- STYLING -- */
+
+.container {
+    padding: 0 20px;
+    max-width: 1080px;
+    margin: 0 auto;
+}
+
+.cards {
+    margin-top: 33px;
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 20px;
+    overflow-y: auto;
+}

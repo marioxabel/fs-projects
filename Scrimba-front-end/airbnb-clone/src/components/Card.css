@@ -1,0 +1,50 @@
+.card {
+    font-size: 0.875rem;
+    width: 175px;
+    flex: 0 0 auto;         /*ADD */
+    display: flex;          /* ADD */
+    flex-direction: column; /* ADD */
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.badge {
+    position: absolute;
+    font-size: 0.64rem;
+    width: 61px;
+    height: 20px; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #FFFFFF;
+    border-radius: 2px;
+    top: 6px;
+    left: 8px;
+}
+
+.card--img {
+  border-radius: 9px;
+}
+
+.card--stats {
+    display: flex;
+    align-items: center;
+    margin-top: 9px;
+}
+
+.card--stats span {
+    margin: 0 2px
+}
+
+.card--star {
+    height: 14px;
+}
+
+.gray {
+    color: #918E9B; 
+}
+
+.bold {
+    font-weight: 700;
+}
+

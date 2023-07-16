@@ -1,0 +1,13 @@
+ .hero--img {
+    margin: 33px auto;
+    max-width: 80%;
+}
+
+
+
+.hero--p {
+    max-width: 70%;
+    font-weight: 300;
+    line-height: 110%;
+    margin-top: 1em;
+}

@@ -1,0 +1,115 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+	padding: 0;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+}
+
+img, picture, svg, video {
+    max-width: 100%;
+    display: block; 
+}
+
+/* ---- TYPO ---- */
+
+p, a, .locationIcon {
+  font-size: 0.64rem;
+}
+
+.card--date {
+  font-weight: 700;
+}
+
+
+/* ---- STYLING ---- */
+
+header {
+  background-color: #F55A5A;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  margin-bottom: 30px;
+}
+
+header h1 {
+  font-size: 0.9rem;
+  margin-left: 8px;
+  font-weight: 500;
+}
+
+.worldIcon {
+  font-size: 1.5em;
+}
+
+.card {
+  display: flex;
+  padding: 15px 40px;
+  border-bottom: 1px solid #F5F5F5;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.card:last-child {
+  border: none;
+}
+
+.card--img {
+  height: 170px;
+  width: 125px;
+  object-fit: cover;
+  border-radius: 5px;
+}
+
+.card--info {
+  margin-left: 19px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.card--location {
+  display: flex;
+} 
+
+.locationIcon {
+  color: #F55A5A;
+}
+
+.card--location p {
+  margin-left: 4px;
+  letter-spacing: 0.10rem;
+}
+
+a, a:visited {
+  color: #918E9B;
+  margin-left: 12px;
+}
+
+.card--date {
+  margin-top: 1rem;
+  margin-bottom: 0.6rem;
+}
+
+@media (max-width: 550px) {
+  .card {
+    flex-direction: column;
+    padding: 25px;
+  }
+  
+  .card--img {
+    height: 250px;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 5px;
+    margin-bottom: 8px;
+  }
+  
+  .card--info {
+    margin: 0;
+  }
+}

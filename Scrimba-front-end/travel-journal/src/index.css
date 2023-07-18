@@ -1,3 +1,7 @@
+:root {
+  --main-color: #113462;
+}
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -6,6 +10,8 @@
 
 body {
   font-family: 'Inter', sans-serif;
+  background-color: #1c1c1c;
+  color: #e8e6e3;
 }
 
 img, picture, svg, video {
@@ -27,8 +33,7 @@ p, a, .locationIcon {
 /* ---- STYLING ---- */
 
 header {
-  background-color: #F55A5A;
-  color: white;
+  background-color: var(--main-color);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -47,16 +52,15 @@ header h1 {
 }
 
 .card {
+  background-color: #202325;
   display: flex;
   padding: 15px 40px;
-  border-bottom: 1px solid #F5F5F5;
-  max-width: 800px;
   margin: 0 auto;
+  max-width: 95%;
+  border-radius: 10px;
+  margin-bottom: 15px;
 }
 
-.card:last-child {
-  border: none;
-}
 
 .card--img {
   height: 170px;
@@ -75,10 +79,6 @@ header h1 {
 .card--location {
   display: flex;
 } 
-
-.locationIcon {
-  color: #F55A5A;
-}
 
 .card--location p {
   margin-left: 4px;
@@ -111,5 +111,11 @@ a, a:visited {
   
   .card--info {
     margin: 0;
+  }
+}
+
+@media (min-width: 800px) {
+  .card {
+    max-width: 800px;
   }
 }

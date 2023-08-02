@@ -7,7 +7,7 @@ The goal of this project was to build a site that could generate memes using rea
 
 
 ## Links
-- Live site URL: [Meme Generator](https://marioxabel.github.io/fs-projects/Scrimba-front-end/movieWatchlistv.2)
+- Live site URL: [Meme Generator](https://meme-generator-marioxabel.netlify.app/)
 
 ## Technologies
 

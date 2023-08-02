@@ -7,7 +7,7 @@ This was one of the first projects I made after learning React. For this project
 I created a card component that renders each place mapping on an array of data. The site is responsive.
 
 ## Links
-- Live site URL: [My Travel Journal](https://travel-journal-seven-theta.vercel.app/)
+- Live site URL: [My Travel Journal]([https://travel-journal-seven-theta.vercel.app/](https://travel-journal-marioxabel.netlify.app/)
 
 ## Technologies
 

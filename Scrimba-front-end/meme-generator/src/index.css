@@ -1,0 +1,149 @@
+:root {
+  --gradient: linear-gradient(90deg, #290caa 0%, #292779 100%);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  font-family: 'Karla', sans-serif;
+}
+
+body  {
+  background-color: #1c1c1c;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+/* ---- TYPO ---- */
+
+.logo h2 {
+  font-size: 1.30rem;
+  margin-left: 6px;
+}
+
+h4 {
+  font-size: 0.75rem;
+}
+
+/* ---- STYLING ---- */
+
+header {
+  background: var(--gradient);
+  color: whitesmoke;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 65px;
+  padding: 19px 36px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  /* width: 190px; */
+
+}
+
+.logo img {
+  height: 1.8em;
+}
+
+.container {
+  padding: 0 36px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.form--input {
+  display: flex;
+  justify-content: space-between;
+  gap: 17px;
+}
+
+input {
+  width: 100%;
+  height: 35px;
+  border: 1px solid #D5D4D8; 
+  font-size: 0.75rem;
+  padding: 10px;
+  margin-top: 36px;
+  border-radius: 5px;
+  background-color: whitesmoke;
+}
+
+button {
+  width: 100%;
+  background: var(--gradient);
+  color: whitesmoke;
+  padding: 0.6rem;
+  font-weight: 700;
+  line-height: normal;
+  letter-spacing: -.4px; 
+  font-size: 1rem;
+  border: none;
+  margin-top: 15px;
+  border-radius: 5px;
+}
+
+.meme {
+  position: absolute;
+  right: 0;
+  left: 0;
+}
+
+.meme img {  
+  margin: 20px auto;
+}
+
+.meme--text {
+  position: absolute;
+  width: 80%;
+  text-align: center;
+  left: 50%;
+  transform: translateX(-50%);
+  margin: 15px 0;
+  padding: 0 5px;
+  font-family: impact, sans-serif;
+  font-size: 1.5em;
+  text-transform: uppercase;
+  color: white;
+  letter-spacing: 1px;
+  text-shadow:
+      2px 2px 0 #000,
+      -2px -2px 0 #000,
+      2px -2px 0 #000,
+      -2px 2px 0 #000,
+      0 2px 0 #000,
+      2px 0 0 #000,
+      0 -2px 0 #000,
+      -2px 0 0 #000,
+      2px 2px 5px #000;
+}
+
+.bottom {
+  bottom: 5%;
+}
+
+.top {
+  top: 5%;
+}
+
+/* ---- QUERIES ---- */
+
+@media (max-width: 450px) {
+  .form--input {
+    flex-direction: column;
+    gap: 0px;
+  }
+  
+  input:last-child {
+    margin-top: 15px;
+  }
+  
+  .container {
+    padding: 0 20px;
+  }
+}

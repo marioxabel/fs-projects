@@ -7,7 +7,7 @@ This was my first solo project after starting to learn React.
 The goal of this project was to build a digital business card site using react. 
 
 ## Links
-- Live site URL: [Business card](https://digital-business-card-nu.vercel.app/)
+- Live site URL: [Business card](https://digital-bussiness-marioxabel.netlify.app)
 
 ## Technologies
 

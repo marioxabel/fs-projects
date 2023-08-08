@@ -1,23 +1,39 @@
-# co42b487d95fbd5b5c8f9c4a8
+# Markdown Notes App
 
-Warning: Vite enforces using jsx syntax inside jsx/tsx files, so it will complain about that. Solution: rename `.js` files to `.jsx` :)
+## Description
 
-Quick start:
+The goal of this project was to add features to an existing project provided by Scrimba. The challenge was to make sense of code I didn't write myself and then add new features to it. I navigated through the unfamiliar codebase, piecing together how things worked. Along the way, I introduced new features that enhance the app's capabilities and make it even more useful. 
 
-```
-$ npm install
-$ npm start
-````
+Features I added:
+- LocalStorage (later upgraded to firebase)
+- Note summary titles
+- Move modified notes to the top of the list
+- Delete notes
 
-Head over to https://vitejs.dev/ to learn more about using vite
-## About Scrimba
+Features Added under guidance:
+- Sync data to firebase
+- Debouncing
 
-At Scrimba our goal is to create the best possible coding school at the cost of a gym membership! 💜
-If we succeed with this, it will give anyone who wants to become a software developer a realistic shot at succeeding, regardless of where they live and the size of their wallets 🎉
-The Frontend Developer Career Path aims to teach you everything you need to become a Junior Developer, or you could take a deep-dive with one of our advanced courses 🚀
+## Links
+- Live site URL: [Markdown Notes App](https://markdown-marioxabel.netlify.app/)
 
-- [Our courses](https://scrimba.com/allcourses)
-- [The Frontend Career Path](https://scrimba.com/learn/frontend)
-- [Become a Scrimba Pro member](https://scrimba.com/pricing)
+## Technologies
 
-Happy Coding!
+- HTML
+- CSS
+- javaScript
+- React
+- Firebase
+- Git
+
+## Author
+
+Mario Abel Garcia. Financial Engineer.
+
+
+### Sources 
+
+- https://www.scrimba.com/
+
+
+

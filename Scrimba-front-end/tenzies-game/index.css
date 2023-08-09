@@ -1,0 +1,88 @@
+* {
+    box-sizing: border-box;    
+    margin: 0;
+}
+
+body {
+    margin: 0;
+}
+
+img, picture, svg, video {
+    max-width: 100%; /* solves a lot of side-scrolling issues in small screens*/
+    display: block; /* block solves a lot of problems with images*/
+}
+
+body { 
+    background: #0B2434;
+    height: 100vh;
+    width: 100vw;
+    position: relative;
+    text-align: center;
+}
+
+/* ---- TYPO ---- */
+
+h1 {
+    color: #2B283A;
+    font-family: Karla;
+    font-size: 1.25rem;
+}
+
+p {
+    color: #4A4E74;
+    font-family: Inter;
+    font-size: 0.81rem;
+    letter-spacing: -0.4px; 
+    max-width: 230px;
+}
+
+button {
+    color: whitesmoke;
+    font-weight: 700;
+    font-family: karla;
+}
+
+/* ---- STYLING ---- */
+
+main {
+    width: 320px;
+    height: 320px;
+    background-color: whitesmoke;
+    border-radius: 10px;
+    padding: 33px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.dice {
+    width: 35px;
+    height: 35px;
+    border-radius: 3.813px;
+    background: #FFF;
+    box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.15);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.dice--container {
+    display: grid;
+    grid-template-columns: auto auto auto auto auto;
+    gap: 18px;
+}
+
+button {
+    background-color: #5035FF;
+    width: 92.16px;
+    height: 35.84px;
+    margin: 0 auto; 
+    border: none;
+    border-radius:  6px;
+    color: whitesmoke;
+}

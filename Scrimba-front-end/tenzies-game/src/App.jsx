@@ -1,9 +1,17 @@
 import React from "react"
 import Dice from "./assets/components/Dice"
 import {nanoid} from "nanoid"
+import Confetti from 'react-confetti'
 
 function App() {
   const [dice, setDice] = React.useState(generateDice())
+  const [tenzies, setTenzies] = React.useState(false)
+  
+  React.useEffect(() => {    
+    if (dice.every(die => die.isHeld && dice[0].value === die.value)) {
+      setTenzies(true)
+    }
+  }, [dice])
   
   function generateDice() {
     const diceArray = []
@@ -43,8 +51,14 @@ function App() {
     
   }
   
+  function resetGame() {
+    setTenzies(false)
+    setDice(generateDice())
+  }
+  
   return (
     <>
+      {tenzies && <Confetti />}
       <main>
         <div>
           <h1>Tenzies</h1>
@@ -53,7 +67,8 @@ function App() {
         <div className="dice--container">
           {diceElements}
         </div> 
-        <button onClick={generateNewDice}>Roll</button>
+        {tenzies ? <button onClick={resetGame}>New Game</button> 
+          : <button onClick={generateNewDice}>Roll</button>}
       </main>
     </>
   )

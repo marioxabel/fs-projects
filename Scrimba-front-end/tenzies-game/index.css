@@ -26,6 +26,7 @@ h1 {
     color: #2B283A;
     font-family: Karla;
     font-size: 1.25rem;
+    margin-bottom: 0.5rem;
 }
 
 p {
@@ -69,6 +70,7 @@ main {
     align-items: center;
     justify-content: center;
     cursor: pointer;
+    user-select: none;
 }
 
 .dice--container {
@@ -79,7 +81,7 @@ main {
 
 button {
     background-color: #5035FF;
-    width: 92.16px;
+    width: 120px;
     height: 35.84px;
     margin: 0 auto; 
     border: none;

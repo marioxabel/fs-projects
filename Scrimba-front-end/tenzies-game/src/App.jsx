@@ -5,13 +5,23 @@ import Confetti from 'react-confetti'
 
 function App() {
   const [dice, setDice] = React.useState(generateDice())
-  const [tenzies, setTenzies] = React.useState(false)
-  
-  React.useEffect(() => {    
+  const [tenzies, setTenzies] = React.useState(
+    {
+      gameStarted: false,
+      startTime: "",
+      numberOfRolls: 0,
+      won: false,
+      gameEnded: false
+    }
+  )
+
+  React.useEffect(() => {   
+    // Won game checker 
     if (dice.every(die => die.isHeld && dice[0].value === die.value)) {
-      setTenzies(true)
+      setTenzies(prevState => ({...prevState, won: true, gameEnded: true}))
     }
   }, [dice])
+  
   
   function generateDice() {
     const diceArray = []
@@ -37,11 +47,29 @@ function App() {
     />
   )
   
+  function startGame() {
+    // Reset game 
+    setTenzies("") 
+    setTenzies(
+      {
+        gameStarted: true,
+        startTime: Date.now(),
+        numberOfRolls: 1,
+        won: false,
+        gameEnded: false
+      }
+    )
+    setDice(generateDice())
+    
+  }
+    
   function generateNewDice() {
     setDice(prevState => 
     prevState.map(prevDice => 
       prevDice.isHeld ? prevDice : {...prevDice, value: Math.ceil(Math.random() * 6)}
     ))
+    setTenzies(prevState => ({...prevState, numberOfRolls: prevState.numberOfRolls + 1}))
+
   }
   
   function hold(id) {
@@ -51,14 +79,10 @@ function App() {
     
   }
   
-  function resetGame() {
-    setTenzies(false)
-    setDice(generateDice())
-  }
-  
+  console.log(tenzies)
   return (
     <>
-      {tenzies && <Confetti />}
+      {tenzies.won && <Confetti />}
       <main>
         <div>
           <h1>Tenzies</h1>
@@ -67,8 +91,15 @@ function App() {
         <div className="dice--container">
           {diceElements}
         </div> 
-        {tenzies ? <button onClick={resetGame}>New Game</button> 
-          : <button onClick={generateNewDice}>Roll</button>}
+        {   
+        !tenzies.gameStarted ? <button onClick={startGame}>Start Game</button>
+          : tenzies.gameEnded && tenzies.won ? <button onClick={startGame}>New Game</button> 
+          : <button onClick={generateNewDice}>Roll</button>
+        }
+        <div className="stats">
+          <p>Time: --:--</p>
+          <p>Rolls: {tenzies.numberOfRolls}</p>
+        </div>
       </main>
     </>
   )

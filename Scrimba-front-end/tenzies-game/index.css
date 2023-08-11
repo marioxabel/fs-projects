@@ -88,3 +88,8 @@ button {
     border-radius:  6px;
     color: whitesmoke;
 }
+
+.stats {
+    display: flex;
+    justify-content: space-around;
+}

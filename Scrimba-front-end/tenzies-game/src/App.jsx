@@ -2,6 +2,7 @@ import React from "react"
 import Dice from "./assets/components/Dice"
 import {nanoid} from "nanoid"
 import Confetti from 'react-confetti'
+import { useWindowSize } from "@uidotdev/usehooks";
 
 function App() {
   const [dice, setDice] = React.useState(generateDice())
@@ -14,6 +15,7 @@ function App() {
       gameEnded: false
     }
   )
+  const { width, height } = useWindowSize()
 
   React.useEffect(() => {   
     // Won game checker 
@@ -48,8 +50,6 @@ function App() {
   )
   
   function startGame() {
-    // Reset game 
-    setTenzies("") 
     setTenzies(
       {
         gameStarted: true,
@@ -82,19 +82,31 @@ function App() {
   console.log(tenzies)
   return (
     <>
-      {tenzies.won && <Confetti />}
-      <main>
+      {tenzies.won && <Confetti  width={width} height={height}/>}
+      <main>   
         <div>
           <h1>Tenzies</h1>
           <p>Roll until all dice are the same. Click each die to freeze it at its current value between rolls.</p>
         </div>
-        <div className="dice--container">
-          {diceElements}
-        </div> 
+        {
+          tenzies.gameStarted ? (
+            <div className="dice--container">
+              {diceElements}
+            </div> 
+          ) : ( 
+            <div className={"start--game--banner"}>
+              <h1>Click "Start Game"</h1>
+            </div>
+          )
+        }
         {   
-        !tenzies.gameStarted ? <button onClick={startGame}>Start Game</button>
-          : tenzies.gameEnded && tenzies.won ? <button onClick={startGame}>New Game</button> 
-          : <button onClick={generateNewDice}>Roll</button>
+          !tenzies.gameStarted ? (
+            <button onClick={startGame}>Start Game</button>
+          ) : tenzies.gameEnded && tenzies.won ? (
+            <button onClick={startGame}>New Game</button> 
+          ) : (
+            <button onClick={generateNewDice}>Roll</button>
+          )
         }
         <div className="stats">
           <p>Time: --:--</p>

@@ -1,6 +1,6 @@
 import React from "react"
 import Dice from "./assets/components/Dice"
-import {nanoid} from "nanoid"
+import { nanoid } from "nanoid"
 import Confetti from 'react-confetti'
 import { useWindowSize } from "@uidotdev/usehooks";
 
@@ -9,11 +9,20 @@ function App() {
   const [tenzies, setTenzies] = React.useState(
     {
       gameStarted: false,
-      startTime: "",
+      timeInSeconds: 0,
       numberOfRolls: 0,
       won: false,
       gameEnded: false
     }
+  )
+  const diceElements = dice.map(die => 
+    <Dice 
+      key={die.id} 
+      id={die.id}
+      number={die.value}
+      isHeld={die.isHeld}  
+      hold={hold}
+    />
   )
   const { width, height } = useWindowSize()
 
@@ -23,6 +32,21 @@ function App() {
       setTenzies(prevState => ({...prevState, won: true, gameEnded: true}))
     }
   }, [dice])
+  
+  
+  React.useEffect(() => {
+    let interval = null
+    
+    if (tenzies.gameStarted && !tenzies.gameEnded) {
+      interval = setInterval(() => {
+        setTenzies(prevState => ({...prevState, timeInSeconds: prevState.timeInSeconds + 1}))
+      }, 1000)
+    } else {
+      clearInterval(interval)
+    }
+    
+    return () => clearInterval(interval)
+  }, [tenzies.gameStarted, tenzies.gameEnded])
   
   
   function generateDice() {
@@ -39,28 +63,17 @@ function App() {
     return diceArray
   }
   
-  const diceElements = dice.map(die => 
-    <Dice 
-      key={die.id} 
-      id={die.id}
-      number={die.value}
-      isHeld={die.isHeld}  
-      hold={hold}
-    />
-  )
-  
   function startGame() {
     setTenzies(
       {
         gameStarted: true,
-        startTime: Date.now(),
+        timeInSeconds: 0,
         numberOfRolls: 1,
         won: false,
         gameEnded: false
       }
     )
-    setDice(generateDice())
-    
+    setDice(generateDice())    
   }
     
   function generateNewDice() {
@@ -79,7 +92,6 @@ function App() {
     
   }
   
-  console.log(tenzies)
   return (
     <>
       {tenzies.won && <Confetti  width={width} height={height}/>}
@@ -109,7 +121,7 @@ function App() {
           )
         }
         <div className="stats">
-          <p>Time: --:--</p>
+          <p>Time: {!tenzies.gameStarted ? "--" : tenzies.timeInSeconds}</p>
           <p>Rolls: {tenzies.numberOfRolls}</p>
         </div>
       </main>

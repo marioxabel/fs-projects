@@ -1,5 +1,5 @@
 import React from "react"
-import Dice from "./assets/components/Dice"
+import Dice from "./components/Dice.jsx"
 import { nanoid } from "nanoid"
 import Confetti from 'react-confetti'
 import { useWindowSize } from "@uidotdev/usehooks";

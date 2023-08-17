@@ -1,29 +1,73 @@
+import { useState } from 'react';
 import he from 'he';
-import { shuffleArray } from '../utils';
+import { shuffleArray, formatBooleanAnswer } from '../utils';
+import { nanoid } from 'nanoid'
+
 
 export default function Quiz(props) {
-    const questionsElements = props.data.map(questionData => {
-        let possibleAnswers = ""
-        
-        if (questionData.type === "boolean") {
-            possibleAnswers = [true, false]
-        } else {
-            possibleAnswers = shuffleArray(questionData.incorrect_answers, questionData.correct_answer)
+    console.log(props.data.length)
+    const [selectedAnswers, setSelectedAnswers] = useState(
+        {
+            answer1: "",
+            answer2: "",
+            answer3: "",
+            answer4: "",
+            answer5: ""       
         }
+    )
+    
+    function handleChange(event) {
+        const {name, value} = event.target
+        setSelectedAnswers(prevState =>
+            ({...prevState, [name]: value})
+        )
+    } 
+    
+    console.log(selectedAnswers)
+    
+    const questionsElements = props.data.map((questionData, index) => {
+        // Mix answers arrays or make array for boolean type of question
+        const possibleAnswersArray =  
+            questionData.type === "boolean" 
+                ? [true, false]
+                : shuffleArray([...questionData.incorrect_answers, questionData.correct_answer])
         
-        const possibleAnswersFormatted = possibleAnswers.map(answer => <p>{he.decode(answer)}</p>)
+        // Map for generating radio buttons for each possible answer in array
+        const possibleAnswersRadioButtons = possibleAnswersArray.map(answer => {
+            // Since answer can be boolean or contain HTML entities we have to format it
+            const formattedAnswer = typeof answer === "boolean" ? formatBooleanAnswer(answer)
+                : he.decode(answer)
+        
+            return (
+                <>
+                    <label>                        
+                        <input
+                            type="radio"
+                            name={`answer${index + 1}`} 
+                            value={answer}
+                            onChange={handleChange}
+                        />
+                        {formattedAnswer}
+                    </label>
+                </>
+            )
+            
+        }) 
         
         return (
-            <>
-                <h2 key={questionData.index}>{he.decode(questionData.question)}</h2>
-                {possibleAnswersFormatted}
-            </>
+            // Complete question & possible answers div
+            <div key={nanoid()}>
+                <h2>{he.decode(questionData.question)}</h2>
+                {possibleAnswersRadioButtons}
+            </div>
         )
     })
     
     return (
         <div className="Quiz">
-            {questionsElements}
+            <form>
+                {questionsElements}
+            </form>
         </div>
     )
 }

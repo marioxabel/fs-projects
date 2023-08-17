@@ -1,8 +1,13 @@
-export function shuffleArray(array1, array2) {
-    const array = array1.concat(array2)
+export function shuffleArray(array) {
     for (let i = array.length - 1; i > 0; i--) {
         const j = Math.floor(Math.random() * (i + 1));
         [array[i], array[j]] = [array[j], array[i]];
     }
     return array
+}
+
+export function formatBooleanAnswer(value) {
+    const booleanStringified = value.toString()
+    // capitalize first letter
+    return booleanStringified.charAt(0).toUpperCase() + booleanStringified.slice(1);
 }

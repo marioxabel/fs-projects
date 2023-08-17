@@ -6,9 +6,10 @@ import Quiz from './components/Quiz.jsx'
 function App() {
   const [game, setGame] = useState({started: false})
   const [quizData, setQuizdata] = useState()
+  const numberOfQuestions = 5
   
   useEffect( () => {
-    fetch("https://opentdb.com/api.php?amount=5")
+    fetch(`https://opentdb.com/api.php?amount=${numberOfQuestions}`)
       .then(response => response.json())
       .then(data => setQuizdata(data.results))
       .catch(error => console.error("An error occurred:", error))

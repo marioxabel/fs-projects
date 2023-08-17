@@ -4,6 +4,11 @@ import { shuffleArray, formatBooleanAnswer } from '../utils';
 import { nanoid } from 'nanoid'
 
 
+const selectedStyle = {
+    backgroundColor: "#D6DBF5",
+    borderColor: "#D6DBF5"
+}
+
 export default function Quiz(props) {
     console.log(props.data.length)
     const [selectedAnswers, setSelectedAnswers] = useState(
@@ -55,9 +60,9 @@ export default function Quiz(props) {
             
             return (
                 // Complete question & possible answers 
-                <div key={nanoid()}>
+                <div key={nanoid()} className="quiz--question flex-column">
                     <h2>{he.decode(questionData.question)}</h2>
-                    {possibleAnswersRadioButtons}
+                    <div className='quiz--answers'>{possibleAnswersRadioButtons}</div>
                 </div>
             )
         })
@@ -65,10 +70,13 @@ export default function Quiz(props) {
     },[props.data]) // only re-run if data changes
     
     return (
-        <div className="Quiz">
+        <div className="quiz flex-column">
             <form>
                 {questionsElements}
             </form>
+            <div className='revision'>
+                <button className='button--check'>Check answers</button>
+            </div>
         </div>
     )
 }

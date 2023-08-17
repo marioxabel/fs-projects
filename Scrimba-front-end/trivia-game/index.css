@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Karla:wght@700&display=swap');
 
+
 * {
     box-sizing: border-box;
 }
@@ -7,19 +8,27 @@
 body {
     margin: 0;
     text-align: center;
-    display: flex;
+    /* display: flex;
     align-items: center;
-    justify-content: center;
-    height: 100vh;
+    justify-content: center; */
+    /* height: 100vh; */
     color: #293264;
 }
 
 /* ---- TYPO ---- */
 
-h1 {
+h1, h2 {
     margin: 0;
     font-family: 'Karla', sans-serif;
     font-weight: 700;
+}
+
+h1 {
+    font-size: 2rem;
+}
+
+h2 {
+    font-size: 1rem;
 }
 
 p {
@@ -27,11 +36,18 @@ p {
     font-weight: 400;
 }
 
+label {
+    font-weight: 500;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.64rem;
+}
+
 /* ---- STYLING ---- */
 .SVG {
     position: absolute;
     z-index: -1;
 }
+
 .YellowSVG {
     top: 0;
     right: 0;
@@ -42,7 +58,14 @@ p {
     bottom: 0;
 }
 
-main {}
+main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    position: relative;
+    padding: 40px  20px;
+}
 
 button {
     background-color: #4D5B9E;
@@ -57,4 +80,53 @@ button {
     height: 52px;
     width: 193px;
     margin-top: 1.8rem;
+}
+
+
+.flex-column {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.quiz {
+    height: 100%;
+    text-align: left;
+    
+}
+
+form {
+    height: 90%;
+}
+
+.quiz--question {
+    border-bottom: 1px solid #DBDEF0;
+    height: calc(100% / 5);
+    padding: 10px;
+}
+
+.quiz--answers {
+    margin-bottom: 0;
+}
+
+/* hide radio button */
+input {
+    display: none;
+}
+
+label {
+    color: #293264;
+    border-radius: 7.942px;
+    border: 0.794px solid #293264;
+    padding: 0.6em 0.8em;
+}
+
+.revision {
+    display: flex;
+    justify-content: center;
+}
+
+.button--check {
+    width: 120px;
+    height: 35px;
 }

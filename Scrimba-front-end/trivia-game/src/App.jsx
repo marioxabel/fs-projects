@@ -15,8 +15,6 @@ function App() {
       .catch(error => console.error("An error occurred:", error))
   }, [])
   
-  console.log(quizData)
-  
   return (
     <>
       <YellowSVG />

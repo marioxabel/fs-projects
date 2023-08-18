@@ -119,6 +119,7 @@ label {
     border-radius: 7.942px;
     border: 0.794px solid #293264;
     padding: 0.6em 0.8em;
+    user-select: none;
 }
 
 .revision {

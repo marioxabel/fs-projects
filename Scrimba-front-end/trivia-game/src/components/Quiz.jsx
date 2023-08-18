@@ -10,7 +10,6 @@ const selectedStyle = {
 }
 
 export default function Quiz(props) {
-    console.log(props.data.length)
     const [selectedAnswers, setSelectedAnswers] = useState(
         {
             answer1: "",
@@ -20,7 +19,19 @@ export default function Quiz(props) {
             answer5: ""       
         }
     )
-    const [questionsElements, setQuestionElements] = useState()
+    const [answersShuffled, setAnswerShuffled] = useState([])
+    
+    
+    useEffect(() => {
+        const newAnswersShuffled = []
+        props.data.map((questionData) => {
+            const possibleAnswersArray =  questionData.type === "boolean" ? [true, false]
+                    : shuffleArray([...questionData.incorrect_answers, questionData.correct_answer])
+                    
+            newAnswersShuffled.push(possibleAnswersArray)
+         })
+         setAnswerShuffled(newAnswersShuffled)
+    },[props.data]) // only re-run if data changes
     
     function handleChange(event) {
         const {name, value} = event.target
@@ -29,50 +40,43 @@ export default function Quiz(props) {
         )
     } 
     
-    console.log(selectedAnswers)
-    
-    // Generate question elements once
-    useEffect(() => {
-        const newQuestionsElements = props.data.map((questionData, index) => {
-            const possibleAnswersArray =  
-                questionData.type === "boolean" 
-                    ? [true, false]
-                    : shuffleArray([...questionData.incorrect_answers, questionData.correct_answer])
-            
-            const possibleAnswersRadioButtons = possibleAnswersArray.map(answer => {
-                const formattedAnswer = typeof answer === "boolean" ? formatBooleanAnswer(answer)
+    const answersFormatted = answersShuffled.map((element, index) => 
+        element.map(answer => {
+            const formattedAnswer = typeof answer === "boolean" ? formatBooleanAnswer(answer)
                     : he.decode(answer)
             
-                return (
-                    <>
-                        <label>                        
-                            <input
-                                type="radio"
-                                name={`answer${index + 1}`} 
-                                value={answer}
-                                onChange={handleChange}
-                            />
-                            {formattedAnswer}
-                        </label>
-                    </>
-                )
-            }) 
-            
             return (
-                // Complete question & possible answers 
-                <div key={nanoid()} className="quiz--question flex-column">
-                    <h2>{he.decode(questionData.question)}</h2>
-                    <div className='quiz--answers'>{possibleAnswersRadioButtons}</div>
-                </div>
+                <label 
+                key={nanoid()}
+                    // Because we have boolean answers and strings, we change everything to string to apply conditional styling
+                    style={String(selectedAnswers[`answer${index + 1}`]) === String(answer) ? selectedStyle : {}}
+                >                        
+                    <input
+                        type="radio"
+                        name={`answer${index + 1}`} 
+                        value={answer}
+                        onChange={handleChange}
+                    />
+                    {formattedAnswer}
+                </label>
             )
-        })
-        setQuestionElements(newQuestionsElements)
-    },[props.data]) // only re-run if data changes
+        }
+    
+    ))
+    
+    const completeQuestionElements = props.data.map((element, index) => {
+        return (
+            <div key={nanoid()} className="quiz--question flex-column">
+                    <h2>{he.decode(element.question)}</h2>
+                    <div className='quiz--answers'>{answersFormatted[index]}</div>
+            </div>
+        )
+    })
     
     return (
         <div className="quiz flex-column">
             <form>
-                {questionsElements}
+                {completeQuestionElements}
             </form>
             <div className='revision'>
                 <button className='button--check'>Check answers</button>

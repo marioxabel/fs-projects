@@ -1,6 +1,6 @@
-import { useEffect, useState } from 'react';
-import he from 'he';
-import { generateAnswersObject, shuffleArray, formatBooleanAnswer } from '../utils';
+import { useEffect, useState } from 'react'
+import he from 'he'
+import { generateAnswersObject, shuffleArray } from '../utils'
 import { nanoid } from 'nanoid'
 
 
@@ -33,31 +33,39 @@ export default function Quiz(props) {
     useEffect(() => {
         const newAnswersShuffled = []
         props.data.map((questionData) => {
-            const possibleAnswersArray =  questionData.type === "boolean" ? [true, false]
+            const possibleAnswersArray =  questionData.type === "boolean" ? ["True", "False"]
                     : shuffleArray([...questionData.incorrect_answers, questionData.correct_answer])
                     
             newAnswersShuffled.push(possibleAnswersArray)
          })
-         setAnswerShuffled(newAnswersShuffled)
+         setAnswerShuffled(newAnswersShuffled)    
          
-         console.log(correctAnswers)
+         setCorrectAnswers(generateAnswersObject(props.data, true))
+         setAbleToSelectAnswers(true)      
     },[props.data]) // only re-run if data changes
     
+    
     useEffect(() => {
+        // Check answers
         if (!ableToSelectAnswers) {
             for (let i = 1; i <= Object.keys(selectedAnswers).length; i++) {
                 selectedAnswers[`answer${i}`] === correctAnswers[`answer${i}`] && setScore(prevState => prevState + 1)
-            }            
-        }
-        
+            }          
+        } 
     },[ableToSelectAnswers])
+    
+    // Restart Game
+    useEffect(() => {
+        setScore(0)
+        setSelectedAnswers(generateAnswersObject(props.data, false)) 
+        // To see correct anwers
+        // console.log(correctAnswers)
+    }, [correctAnswers])
     
     function handleChange(event) {
         if (ableToSelectAnswers) {
-            const {name, value} = event.target
-            setSelectedAnswers(prevState =>
-                ({...prevState, [name]: value})
-        )
+            const { name, value } = event.target
+            setSelectedAnswers(prevState => ({...prevState, [name]: value}))
         }
         return
     } 
@@ -66,27 +74,35 @@ export default function Quiz(props) {
         setAbleToSelectAnswers(false)
     }
     
-    function applyCondtionalStyling(index, answer, formattedAnswer ) {
+    function applyCondtionalStyling(index, answer) {
         if (ableToSelectAnswers) {
-            return String(selectedAnswers[`answer${index + 1}`]) === String(answer) ? conditionalStyles.selected : {}
+            return selectedAnswers[`answer${index + 1}`] === answer ? conditionalStyles.selected : {}
         } else if (!ableToSelectAnswers && correctAnswers[`answer${index + 1}`]  === selectedAnswers[`answer${index + 1}`] ) {
-            return correctAnswers[`answer${index + 1}`]  == formattedAnswer ? conditionalStyles.correct : {}
-        } else if (!ableToSelectAnswers && correctAnswers[`answer${index + 1}`]  !== selectedAnswers[`answer${index + 1}`] ) {
-            return correctAnswers[`answer${index + 1}`]  == formattedAnswer ? conditionalStyles.wrong : {}
+            return correctAnswers[`answer${index + 1}`]  == answer ? conditionalStyles.correct : {}
+        } else if (!ableToSelectAnswers && correctAnswers[`answer${index + 1}`]  !== selectedAnswers[`answer${index + 1}`] 
+            || !ableToSelectAnswers &&  selectedAnswers[`answer${index + 1}`] == '') {
+            return (
+                correctAnswers[`answer${index + 1}`]  == answer ? conditionalStyles.correct : {} &&
+                String(selectedAnswers[`answer${index + 1}`]) === String(answer) ? conditionalStyles.wrong : {}
+            )
         }
+    }
+    
+    function renderNewGame() {
+        props.startNewGame()
     }
     
     
     const answersFormatted = answersShuffled.map((element, index) => 
         element.map(answer => {
-            const formattedAnswer = typeof answer === "boolean" ? formatBooleanAnswer(answer)
+            const formattedAnswer = typeof answer === "boolean" ? answer
                     : he.decode(answer)
             
             return (
                 <label 
                 key={nanoid()}
                     // Because we have boolean answers and strings, we change everything to string to apply conditional styling
-                    style={applyCondtionalStyling(index, answer, formattedAnswer)}
+                    style={applyCondtionalStyling(index, answer)}
                 >                        
                     <input
                         type="radio"
@@ -121,13 +137,12 @@ export default function Quiz(props) {
                         <button onClick={checkAnswers}>Check answers</button>
                     : (
                         <>
-                            <p>You scored {score} correct answers</p>
-                            <button onClick={checkAnswers}>Play again</button>
+                            <p className='score'>You scored {score}/{props.data.length} correct answers</p>
+                            <button onClick={renderNewGame}>Play again</button>
                         </>
                     )
                 }
             </div>
-            
         </div>
     )
 }

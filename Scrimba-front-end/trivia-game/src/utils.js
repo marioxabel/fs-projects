@@ -20,8 +20,8 @@ export function shuffleArray(array) {
     return array
 }
 
-export function formatBooleanAnswer(value) {
-    const booleanStringified = value.toString()
-    // capitalize first letter
-    return booleanStringified.charAt(0).toUpperCase() + booleanStringified.slice(1);
-}
+// export function formatBooleanAnswer(value) {
+//     const booleanStringified = value.toString()
+//     // capitalize first letter
+//     return booleanStringified.charAt(0).toUpperCase() + booleanStringified.slice(1);
+// }

@@ -6,6 +6,7 @@ import Quiz from './components/Quiz.jsx'
 function App() {
   const [game, setGame] = useState({started: false})
   const [quizData, setQuizdata] = useState()
+  const [newGame, setNewGame] = useState(0)
   const numberOfQuestions = 5
   
   useEffect( () => {
@@ -13,7 +14,11 @@ function App() {
       .then(response => response.json())
       .then(data => setQuizdata(data.results))
       .catch(error => console.error("An error occurred:", error))
-  }, [])
+  }, [newGame])
+  
+  function startNewGame() {
+    setNewGame(prevState => prevState + 1)
+  }
   
   return (
     <>
@@ -27,7 +32,7 @@ function App() {
               <button onClick={() => setGame({started: true})}>Start quiz</button>
             </div>
           :
-            <Quiz data={quizData}/>
+            <Quiz data={quizData} startNewGame={startNewGame}/>
         }
       </main>
       <BlueSVG />

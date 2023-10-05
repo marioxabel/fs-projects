@@ -1,6 +1,7 @@
 import { validateValue } from "../utils"
 import "./Banners.css"
 
+// eslint-disable-next-line react/prop-types
 export default function Banner({ status, title, text}) {
     const validStatus = ["success", "warning", "error", "neutral"]
     

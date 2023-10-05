@@ -1,4 +1,4 @@
-import React from "react";
+/* eslint-disable react/prop-types */
 import "./Badge.css"
 import { validateValue } from "../utils";
 

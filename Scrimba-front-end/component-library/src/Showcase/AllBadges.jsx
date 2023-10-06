@@ -25,7 +25,7 @@ export default function AllBadges() {
     
     return (
         <div>
-            <h1>Badges</h1>
+            <h2>Badges</h2>
             <h3>Square</h3>
             <div className="flex">
                 {squareBadges}

@@ -1,8 +1,25 @@
-# React + Vite
+# 🧩 Component library
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Description
 
-Currently, two official plugins are available:
+The goal of this project was to build a React component library to practice creating reusable components on react. The development process involved translating a Figma design, which was provided, into a functional components that can accept props and can be also be styled with classnames. The project served as an opportunity to apply newly acquired React skills towards web development.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Links
+- Live site URL: [Components library](https://library-marioxabel.netlify.app/)
+
+## Technologies
+
+- HTML
+- CSS
+- javaScript
+- React
+- Git
+
+## Author
+
+Mario Abel Garcia. Financial Engineer.
+
+
+### Sources 
+
+- https://www.scrimba.com/

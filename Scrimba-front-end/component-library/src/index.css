@@ -8,6 +8,11 @@ body {
   font-family: 'Inter', sans-serif;
 }
 
+img, picture, svg, video {
+  max-width: 100%; /* solves a lot of side-scrolling issues in small screens*/
+  display: block; /* block solves a lot of problems with images*/
+}
+
 /* Styling */
 
 .info {

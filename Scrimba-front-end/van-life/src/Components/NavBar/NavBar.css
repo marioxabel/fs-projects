@@ -1,0 +1,32 @@
+
+.Navbar {
+    padding: 2.25em 1.62em;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  nav {
+    background-color: #FFF7ED;
+  }
+  
+  nav a {
+    text-decoration: none;
+    color: #161616;
+  }
+  
+  
+  .NavBar__logo {
+    font-size: 1.58rem;
+    font-weight: 900;
+    color: black;
+  }
+  
+  nav a:hover {
+    text-decoration: underline;
+    color: #161616;
+  }
+  
+  .NavBar__navigation a {
+    margin-left: 0.8em;
+  }

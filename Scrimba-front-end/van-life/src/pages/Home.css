@@ -1,0 +1,29 @@
+.home__container {
+    color: #FFF;
+    margin-top: 0;
+    padding: 4em 1.68em;
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.46) 0%, rgba(0, 0, 0, 0.46) 100%), url('/home-hero.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    min-height: 350px;
+  }
+  
+  .home__container h1 {
+    font-weight: 700;
+    font-size: 2.25rem;
+    line-height: 42px;
+    margin-bottom: 1.41rem;
+  }
+  
+  .home__container button {
+    margin-top: 3.23em;
+    width: 100%;
+    color: inherit;
+    border-radius: 0.3125rem;
+    padding: 0.56em;
+    font-weight: 700;
+    background: #FF8C38;
+    border: none;
+  }
+  

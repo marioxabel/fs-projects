@@ -25,10 +25,20 @@ h1, h2 {
 .container {
   max-width: 900px;
   margin: 0 auto;
-}
-
-.padding {
   padding: 0 1.68rem;
 }
 
+.padding {
+  
+}
+
+main {
+  margin-bottom: 84px;
+}
+
+.site-wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
 

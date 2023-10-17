@@ -1,6 +1,6 @@
-import React, {useContext } from 'react'
+import React from 'react'
 import ReactDOM from 'react-dom/client'
-import { BrowserRouter, Routes, Route, Link } from 'react-router-dom'
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import './index.css'
 // Pages
 import Home from './src/pages/Home/Home'
@@ -9,6 +9,8 @@ import Vans from './src/pages/Vans/Vans'
 import VanDetail from './src/pages/Vans/VanDetail'
 import Dashboard from './src/pages/Host/Dashboard'
 import Income from './src/pages/Host/Income'
+import HostVans from './src/pages/Host/HostVans'
+import HostVanDetail from './src/pages/Host/HostVanDetail'
 import Reviews from './src/pages/Host/Reviews'
 // Components
 import Layout from './src/Components/Layout/Layout'
@@ -29,6 +31,8 @@ function App() {
             <Route path='host' element={<HostLayout />} >
               <Route index element={<Dashboard />} />
               <Route path="income" element={<Income />} />
+              <Route path='vans' element={<HostVans />} />
+              <Route path='vans/:id' element={<HostVanDetail />} />
               <Route path="reviews" element={<Reviews />} />
             </Route>
          </Route>

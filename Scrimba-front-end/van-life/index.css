@@ -5,7 +5,7 @@
 
 body {
   margin: 0 auto;
-  background-color: #FFF7ED
+  background-color: #FFF7ED;
 }
 
 img, picture, svg, video {
@@ -27,5 +27,8 @@ h1, h2 {
   margin: 0 auto;
 }
 
+.padding {
+  padding: 0 1.68rem;
+}
 
 

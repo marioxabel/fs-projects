@@ -3,7 +3,7 @@ import './About.css'
 export default function About() {
     
     return (
-        <div className="about-page">
+        <div className="about-page container">
             <img src="/about-hero.png" alt="Camping on van in the night" />
             <div className="about-page__content">
                 <h1>Don’t squeeze in a sedan when you could relax in a van.</h1>

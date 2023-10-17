@@ -1,7 +1,4 @@
-.vans__page {
-    padding: 3.39rem 1.8rem 9.5rem;
-  }
-  
+ 
   .vans__container {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -10,7 +7,15 @@
     margin-top: 57px;
   }
   
+  .vans h2 {
+    margin-top: 3.4rem;
+  }
   
+  
+  .van__link {
+    text-decoration: none;
+    color: black;
+  }
   
   .van__info img {
     border-radius: 0.3125rem; 

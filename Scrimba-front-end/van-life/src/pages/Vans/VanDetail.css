@@ -1,0 +1,27 @@
+.van-detail img {
+    margin-bottom: 3.27rem;
+}
+
+.van-detail h1 {
+    margin: 1.46rem 0 0.61rem 0
+}
+
+.van-detail h3 {
+    margin: 0;
+}
+
+.van-detail p {
+    line-height: 1.5;
+}
+
+.van-detail button {
+    margin-top: 1.35rem;
+    width: 100%;
+    font-size: 1.125rem;
+    color: #FFF;
+    border-radius: 0.3125rem;
+    padding: 0.56em;
+    font-weight: 700;
+    background: #FF8C38;
+    border: none;
+}

@@ -11,7 +11,11 @@ import Dashboard from './src/pages/Host/Dashboard'
 import Income from './src/pages/Host/Income'
 import HostVans from './src/pages/Host/HostVans'
 import HostVanDetail from './src/pages/Host/HostVanDetail'
+import HostVanInfo from './src/pages/Host/HostVanInfo'
+import HostVanPhotos from './src/pages/Host/HostVanPhotos'
+import HostVanPricing from './src/pages/Host/HostVanPricing'
 import Reviews from './src/pages/Host/Reviews'
+import NotFound from './src/pages/NotFound/NotFound'
 // Components
 import Layout from './src/Components/Layout/Layout'
 import HostLayout from './src/Components/HostLayout/HostLayout'
@@ -32,9 +36,14 @@ function App() {
               <Route index element={<Dashboard />} />
               <Route path="income" element={<Income />} />
               <Route path='vans' element={<HostVans />} />
-              <Route path='vans/:id' element={<HostVanDetail />} />
+              <Route path='vans/:id' element={<HostVanDetail />} >
+                  <Route index element={<HostVanInfo />} />
+                  <Route path="pricing" element={<HostVanPricing />} />
+                  <Route path="photos" element={<HostVanPhotos />} />
+              </Route>
               <Route path="reviews" element={<Reviews />} />
             </Route>
+            <Route path='*' element={<NotFound />} />
          </Route>
         </Routes>
       </BrowserRouter>

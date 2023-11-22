@@ -1,0 +1,15 @@
+h1 {
+    margin-top: 3.5rem;
+}
+
+.return-home {
+    margin-top: 1.85rem;
+    display: inline-block;
+    text-align: center;
+    border-radius: 0.31144rem; 
+    font-size: 1.125rem;
+    padding: 0.9rem;
+    background: #161616;
+    color: #FFF;
+    width: 100%;
+}

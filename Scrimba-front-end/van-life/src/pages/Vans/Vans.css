@@ -9,6 +9,7 @@
   
   .vans h2 {
     margin-top: 3.4rem;
+    margin-bottom: 1.4rem;
   }
   
   
@@ -50,14 +51,49 @@
     line-height: 1.97888rem; 
   }
   
-  .van-info__type--simple {
+  .van-info__type--simple,.filter--simple , .filter--simple:hover {
     background: #E17654; 
+    color: #FFEAD0;
   }
   
-  .van-info__type--rugged {
-    background: #115E59; 
+  .van-info__type--rugged, .filter--rugged:hover {
+    background: #115E59;
+    color: #FFEAD0; 
   }
   
-  .van-info__type--luxury {
+  .van-info__type--luxury, .filter--luxury:hover {
     background: #161616; 
+    color: #FFEAD0;
+  }
+  
+  .filter {
+    color: #4D4D4D;
+    font-weight: 500;
+    border-radius: 5px;
+    background: #FFEAD0; 
+    padding: 0.375rem 1.625rem 0.4375rem 1.625rem; 
+    margin-right: 1.25rem;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .active--simple {
+    background: #E17654; 
+    color: #FFEAD0;
+  }
+  
+  .active--rugged {
+    background: #115E59;
+    color: #FFEAD0; 
+  }
+  
+  .active--luxury {
+    background: #161616; 
+    color: #FFEAD0;
+  }
+  
+  
+  .clear {
+    background: none;
+    text-decoration: underline;
   }

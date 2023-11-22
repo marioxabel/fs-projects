@@ -36,3 +36,85 @@ a {
     text-decoration: none;
     color: inherit;
 }
+
+.back  {
+    margin: 37px 0;
+}
+
+.back:hover {
+    text-decoration: underline
+}
+
+.van-detail-page__container {
+    padding: 23px 25px;
+    background-color: #fff;
+}
+
+
+.van-detail-page {
+    display: flex;
+}
+
+.van-detail-page img {
+    max-width: 160px;
+}
+
+.van-details {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: 20px;
+}
+
+.van-detail__type {
+    font-size: 0.81rem;
+    display: inline-block;
+    color: #FFEAD0; 
+    font-weight: 600;
+    padding: 0.18em 0.87em;
+    border-radius: 0.3125rem; 
+    text-transform: capitalize;
+    line-height: 1.97888rem; 
+    margin-bottom: 16px;
+    align-self: flex-start;
+}
+  
+.van-detail__type--simple {
+    background: #E17654; 
+}
+
+.van-detail__type--rugged {
+    background: #115E59; 
+}
+
+.van-detail__type--luxury {
+    background: #161616; 
+}
+
+.van-details p {
+    margin-top: 8px;
+}
+
+.van-details span {
+    font-weight: 700;
+}
+
+
+.van-detail-page__nav {
+    margin: 27px 0;
+    background-color: #FFF;
+}
+
+.van-detail-page__nav a {
+    margin-right: 21px;
+    background-color: #FFF;
+}
+
+.detail-info span {
+    font-weight: 400
+}
+
+.detail-info img {
+    width: 103px;
+    border-radius: 5px; 
+}

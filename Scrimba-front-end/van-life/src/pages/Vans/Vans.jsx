@@ -1,20 +1,34 @@
 import { useEffect, useState } from 'react'
 import './Vans.css'
 import { Link, useSearchParams } from 'react-router-dom'
-import getVans from '../../../api'
+import { getVans } from '../../../api'
 
 export default function Vans() {
     const [vans, setVans] = useState([])
     let [searchParams, setSearchParams] = useSearchParams()
+    const [loading, setLoading] = useState(false)
+    const [error, setError] = useState(null)
+    
     let typeFilter = searchParams.get(["type"])
     
     useEffect(() => {
+        
         async function loadVans() {
-            const data = await getVans()
-            setVans(data)
-        }
+            setLoading(true)
+            try {
+                const data = await getVans()
+                setVans(data)
+            } catch(err) {
+                console.log(err)
+                console.log("we got an error")
+                setError(err)
+            } finally {
+                setLoading(false)                
+            }
+    }
         
         loadVans()
+        
     }, [])
     
     const displayedVans = typeFilter
@@ -36,6 +50,14 @@ export default function Vans() {
             </div>
         )
     })
+    
+    if (loading) {
+        return <h1 className='container'>Loading...</h1>
+    }
+    
+    if (error) {
+        return <h1 className='container'>There was an error: {error.message}</h1>
+    }
     
     return (
         <div className='vans padding container'>

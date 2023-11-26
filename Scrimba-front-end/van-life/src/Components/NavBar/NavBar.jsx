@@ -33,6 +33,12 @@ export default function NavBar() {
                     >
                         Vans
                     </NavLink>
+                    <NavLink 
+                        to="/login"
+                        style={({isActive}) => isActive ? style : null}
+                    >
+                        Log In
+                    </NavLink>
                 </div>
             </div>
         </nav>

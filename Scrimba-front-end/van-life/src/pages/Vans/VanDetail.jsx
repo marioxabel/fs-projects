@@ -4,16 +4,36 @@ import './VanDetail.css'
 
 export default function VanDetail() {
     const [van, setVan] = useState(null)
+    const [loading, setLoading] = useState(false)
+    const [error, setError] = useState(null)
     const { id } = useParams()
     const location = useLocation()
 
     const search = location.state?.search || ""
     
     useEffect(() => {
-        fetch(`/api/vans/${id}`)
-        .then(response => response.json())
-        .then(data => setVan(data.vans))
+        async function loadVans() {
+            setLoading(true)
+            try {
+                const data = await getVans(id)
+                setVan(data)
+            } catch (err) {
+                setError(err)
+            } finally {
+                setLoading(false)
+            }
+        }
+        loadVans()
     }, [id])
+    
+    if (loading) {
+        return <h1>Loading...</h1>
+    }
+    
+    if (error) {
+        return <h1>There was an error: {error.message}</h1>
+    }
+
     
     return (
         <div className="padding container">
